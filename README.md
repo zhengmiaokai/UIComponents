@@ -4,7 +4,7 @@
 
 source 'https://github.com/zhengmiaokai/Specs.git'
 
-pod 'UIComponents/BannerView', '~> 1.0.0'\<br> 
+*pod 'UIComponents/BannerView', '~> 1.0.0'*
 pod 'UIComponents/PageControl', '~> 1.0.0'\<br> 
 pod 'UIComponents/NavigationBar', '~> 1.0.0'\<br> 
 pod 'UIComponents/ProgressHUD', '~> 1.0.0'\<br> 
