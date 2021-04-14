@@ -1,8 +1,7 @@
 # UIComponents
-
 公共UI组件：广告轮播、PageControl、导航栏、ProgressHUD、ZoomScrollView
 
-##组件引入：在工程Podfile添加一下来源链接，以及pod信息
+##组件引用：在工程Podfile添加一下source链接，以及pod信息（支持单个子组件的引用）
 
 source 'https://github.com/zhengmiaokai/Specs.git'
 
