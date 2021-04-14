@@ -7,14 +7,14 @@
 
 #import "ViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "Constant.h"
 
-#import "MKAdvertBannerView.h"
-#import "MKPageControl.h"
-#import "MKZoomScrollView.h"
-#import "MKEffectTipView.h"
-#import "MKLoadingView.h"
-#import "MKNavigationBar.h"
+#import <UIComponents/MKAdvertBannerView.h>
+#import <UIComponents/MKPageControl.h>
+#import <UIComponents/MKZoomScrollView.h>
+#import <UIComponents/MKEffectTipView.h>
+#import <UIComponents/MKLoadingView.h>
+#import <UIComponents/MKNavigationBar.h>
+#import <UIComponents/Constant.h>
 
 @interface MKAdBannerContentView : UIView <MKAdVertBannderProtocol>
 
