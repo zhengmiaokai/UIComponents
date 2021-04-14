@@ -18,42 +18,23 @@ PODS:
   - SDWebImage (4.4.8):
     - SDWebImage/Core (= 4.4.8)
   - SDWebImage/Core (4.4.8)
-  - UIComponents/BannerView (1.0.0):
-    - UIComponents/ToolKit
-  - UIComponents/NavigationBar (1.0.0):
-    - UIComponents/ToolKit
-  - UIComponents/PageControl (1.0.0):
-    - UIComponents/ToolKit
-  - UIComponents/ProgressHUD (1.0.0):
-    - UIComponents/ToolKit
-  - UIComponents/ToolKit (1.0.0)
-  - UIComponents/ZoomScrollView (1.0.0):
-    - UIComponents/ToolKit
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0.1)
   - Masonry (~> 1.1.0)
   - SDWebImage (~> 4.4.2)
-  - UIComponents/BannerView (~> 1.0.0)
-  - UIComponents/NavigationBar (~> 1.0.0)
-  - UIComponents/PageControl (~> 1.0.0)
-  - UIComponents/ProgressHUD (~> 1.0.0)
-  - UIComponents/ZoomScrollView (~> 1.0.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - Masonry
     - SDWebImage
-  https://github.com/zhengmiaokai/Specs.git:
-    - UIComponents
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
-  UIComponents: 9a9b7a882359d1be84f352c74a3a8dae1bf01415
 
-PODFILE CHECKSUM: 181622d3c8845a44b21912a69fc400911587629a
+PODFILE CHECKSUM: 15d91f347bffd5e6a1328d60074b8103e6c4dfb1
 
 COCOAPODS: 1.9.3
