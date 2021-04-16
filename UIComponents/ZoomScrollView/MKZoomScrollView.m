@@ -7,7 +7,8 @@
 //
 
 #import "MKZoomScrollView.h"
-#import "Constant.h"
+#import <MKUtils/UIColor+Addition.h>
+#import <MKUtils/UIView+Addition.h>
 
 @interface MKZoomScrollView () <UIScrollViewDelegate>
 

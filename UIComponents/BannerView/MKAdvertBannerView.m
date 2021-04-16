@@ -8,7 +8,9 @@
 
 #import "MKAdvertBannerView.h"
 #import "MKCollectionViewLayout.h"
-#import "Constant.h"
+#import <MKUtils/UIColor+Addition.h>
+#import <MKUtils/UIView+Addition.h>
+#import <MKUtils/NSArray+Additions.h>
 
 @interface LCAdVertBannderCell : UICollectionViewCell
 

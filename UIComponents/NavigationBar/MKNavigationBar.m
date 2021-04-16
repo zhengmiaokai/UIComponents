@@ -7,7 +7,12 @@
 //
 
 #import "MKNavigationBar.h"
-#import "Constant.h"
+#import <MKUtils/UIColor+Addition.h>
+#import <MKUtils/UIView+Addition.h>
+#import <MKUtils/NSArray+Additions.h>
+#import <MKUtils/NSString+Addition.h>
+#import <MKUtils/UIScreen+Addition.h>
+#import <MKUtils/MarcoConstant.h>
 
 @interface MKNavigationBar ()
 

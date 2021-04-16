@@ -7,7 +7,9 @@
 //
 
 #import "MKPageControl.h"
-#import "Constant.h"
+
+#import <MKUtils/UIColor+Addition.h>
+#import <MKUtils/UIView+Addition.h>
 
 #define LCPageControlTag 168
 

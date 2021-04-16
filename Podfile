@@ -7,4 +7,8 @@ pod 'AFNetworking', '~> 4.0.1'
 pod 'SDWebImage', '~> 4.4.2'
 pod 'Masonry', '~> 1.1.0'
 
+source 'https://github.com/zhengmiaokai/Specs.git'
+
+pod 'MKUtils', '~>1.0.0'
+
 end

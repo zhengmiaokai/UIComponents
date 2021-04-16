@@ -7,7 +7,9 @@
 //
 
 #import "MKEffectTipView.h"
-#import "Constant.h"
+#import <MKUtils/UIColor+Addition.h>
+#import <MKUtils/UIView+Addition.h>
+#import <MKUtils/MarcoConstant.h>
 
 @interface MKEffectTipView ()
 

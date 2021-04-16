@@ -7,7 +7,12 @@
 
 #import "ViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-#import "Constant.h"
+
+#import <MKUtils/MarcoConstant.h>
+#import <MKUtils/UIView+Addition.h>
+#import <MKUtils/UIColor+Addition.h>
+#import <MKUtils/NSArray+Additions.h>
+#import <MKUtils/UIScreen+Addition.h>
 
 #import "MKAdvertBannerView.h"
 #import "MKPageControl.h"
