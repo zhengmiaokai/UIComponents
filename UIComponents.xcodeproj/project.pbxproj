@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5F11224A28417270008EBCBC /* libPods-UIComponents.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F16D39E9AD42E752391618D /* libPods-UIComponents.a */; };
+		D507E1E9274B7961001586AF /* MKConfigPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D507E1E1274B7961001586AF /* MKConfigPickerView.m */; };
+		D507E1EA274B7961001586AF /* MKSpaceTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D507E1E5274B7961001586AF /* MKSpaceTextField.m */; };
+		D507E1EB274B7961001586AF /* MKActionSheetView.m in Sources */ = {isa = PBXBuildFile; fileRef = D507E1E7274B7961001586AF /* MKActionSheetView.m */; };
 		D59B5A2E26257828005D9566 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D59B5A2D26257828005D9566 /* AppDelegate.m */; };
 		D59B5A3426257828005D9566 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D59B5A3326257828005D9566 /* ViewController.m */; };
 		D59B5A3726257828005D9566 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59B5A3526257828005D9566 /* Main.storyboard */; };
@@ -27,6 +30,13 @@
 		5C3C04FCDCB6BC7F5B6B7FA3 /* Pods-UIComponents.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.release.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.release.xcconfig"; sourceTree = "<group>"; };
 		5F16D39E9AD42E752391618D /* libPods-UIComponents.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UIComponents.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F769E85C16D5273FC5AE29 /* Pods-UIComponents.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIComponents.debug.xcconfig"; path = "Target Support Files/Pods-UIComponents/Pods-UIComponents.debug.xcconfig"; sourceTree = "<group>"; };
+		D507E1E1274B7961001586AF /* MKConfigPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKConfigPickerView.m; sourceTree = "<group>"; };
+		D507E1E2274B7961001586AF /* MKConfigPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKConfigPickerView.h; sourceTree = "<group>"; };
+		D507E1E4274B7961001586AF /* MKSpaceTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKSpaceTextField.h; sourceTree = "<group>"; };
+		D507E1E5274B7961001586AF /* MKSpaceTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKSpaceTextField.m; sourceTree = "<group>"; };
+		D507E1E7274B7961001586AF /* MKActionSheetView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKActionSheetView.m; sourceTree = "<group>"; };
+		D507E1E8274B7961001586AF /* MKActionSheetView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKActionSheetView.h; sourceTree = "<group>"; };
+		D507E1EE274B7AFC001586AF /* MKConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MKConstant.h; sourceTree = "<group>"; };
 		D59B5A2926257828005D9566 /* UIComponents.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIComponents.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D59B5A2C26257828005D9566 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D59B5A2D26257828005D9566 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -82,6 +92,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D507E1E0274B7961001586AF /* ConfigPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				D507E1E2274B7961001586AF /* MKConfigPickerView.h */,
+				D507E1E1274B7961001586AF /* MKConfigPickerView.m */,
+			);
+			path = ConfigPickerView;
+			sourceTree = "<group>";
+		};
+		D507E1E3274B7961001586AF /* SpaceTextField */ = {
+			isa = PBXGroup;
+			children = (
+				D507E1E4274B7961001586AF /* MKSpaceTextField.h */,
+				D507E1E5274B7961001586AF /* MKSpaceTextField.m */,
+			);
+			path = SpaceTextField;
+			sourceTree = "<group>";
+		};
+		D507E1E6274B7961001586AF /* ActionSheetView */ = {
+			isa = PBXGroup;
+			children = (
+				D507E1E8274B7961001586AF /* MKActionSheetView.h */,
+				D507E1E7274B7961001586AF /* MKActionSheetView.m */,
+			);
+			path = ActionSheetView;
+			sourceTree = "<group>";
+		};
 		D59B5A2026257828005D9566 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +146,9 @@
 				D59B5A3326257828005D9566 /* ViewController.m */,
 				D59B5A4C26257CC5005D9566 /* BannerView */,
 				D59B5A5126257CC5005D9566 /* NavigationBar */,
+				D507E1E6274B7961001586AF /* ActionSheetView */,
+				D507E1E0274B7961001586AF /* ConfigPickerView */,
+				D507E1E3274B7961001586AF /* SpaceTextField */,
 				D59B5A4626257CC5005D9566 /* PageControl */,
 				D59B5A5426257CC5005D9566 /* ProgressHUD */,
 				D59B5A4926257CC5005D9566 /* ZoomScrollView */,
@@ -117,6 +157,7 @@
 				D59B5A3D2625782B005D9566 /* Info.plist */,
 				D59B5A3E2625782B005D9566 /* main.m */,
 				D59B5A3526257828005D9566 /* Main.storyboard */,
+				D507E1EE274B7AFC001586AF /* MKConstant.h */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -272,7 +313,10 @@
 				D59B5A2E26257828005D9566 /* AppDelegate.m in Sources */,
 				D59B5A3F2625782B005D9566 /* main.m in Sources */,
 				D59B5A5D26257CC5005D9566 /* MKNavigationBar.m in Sources */,
+				D507E1E9274B7961001586AF /* MKConfigPickerView.m in Sources */,
+				D507E1EB274B7961001586AF /* MKActionSheetView.m in Sources */,
 				D59B5A5E26257CC5005D9566 /* MKEffectTipView.m in Sources */,
+				D507E1EA274B7961001586AF /* MKSpaceTextField.m in Sources */,
 				D59B5A5C26257CC5005D9566 /* MKAdvertBannerView.m in Sources */,
 				D59B5A5F26257CC5005D9566 /* MKLoadingView.m in Sources */,
 			);

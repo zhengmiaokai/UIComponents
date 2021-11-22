@@ -13,9 +13,13 @@
 #import <MKUtils/UIColor+Addition.h>
 #import <MKUtils/NSArray+Additions.h>
 #import <MKUtils/UIScreen+Addition.h>
+#import <MKUtils/UITextField+Addition.h>
 
 #import "MKAdvertBannerView.h"
 #import "MKPageControl.h"
+#import "MKSpaceTextField.h"
+#import "MKActionSheetView.h"
+#import "MKConfigPickerView.h"
 #import "MKZoomScrollView.h"
 #import "MKEffectTipView.h"
 #import "MKLoadingView.h"
@@ -49,7 +53,7 @@
 @end
 
 
-@interface ViewController () <MKAdvertBannerViewDelegate, MKAdvertBannerViewDataSource>
+@interface ViewController () <MKAdvertBannerViewDelegate, MKAdvertBannerViewDataSource, MKActionSheetViewDelegate>
 
 @property (nonatomic, strong) MKNavigationBar* navigationBar;
 
@@ -87,8 +91,16 @@
     _pageControl.pageCount = datas.count;
     _pageControl.currentIndex = 0;
     
+    MKSpaceTextField* textField = [[MKSpaceTextField alloc] initWithFrame:CGRectMake(30, _pageControl.bottom + 40, kScreenWidth-60, 40)];
+    textField.spaceIndexs = @[@3, @8];
+    textField.textAlignment = NSTextAlignmentCenter;
+    textField.layer.borderWidth = 1;
+    textField.layer.borderColor = [UIColor grayColor].CGColor;
+    textField.maxLength = 13;
+    textField.realText = @"18300001131";
+    [self.view addSubview:textField];
     
-    UIImageView* bigImage = [[UIImageView alloc] initWithFrame:CGRectMake(70, _pageControl.bottom + 80, kScreenWidth - 140, 150)];
+    UIImageView* bigImage = [[UIImageView alloc] initWithFrame:CGRectMake(70, textField.bottom + 40, kScreenWidth - 140, 150)];
     bigImage.contentMode = UIViewContentModeScaleAspectFill;
     bigImage.layer.masksToBounds = YES;
     [bigImage sd_setImageWithURL:[NSURL URLWithString:[datas safeObjectAtIndex:0]]];
@@ -96,6 +108,21 @@
     [self.view addSubview:bigImage];
     self.bigImage = bigImage;
     
+    UIButton* actionSheetBtn = [[UIButton alloc] initWithFrame:CGRectMake(30, _bigImage.bottom + 80, (kScreenWidth-90)/2, 50)];
+    [actionSheetBtn setTitle:@"ActionSheet" forState:UIControlStateNormal];
+    actionSheetBtn.layer.borderWidth = 1;
+    actionSheetBtn.layer.borderColor = [UIColor grayColor].CGColor;
+    [actionSheetBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [actionSheetBtn addTarget:self action:@selector(showSheetView:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:actionSheetBtn];
+    
+    UIButton* pickerViewBtn = [[UIButton alloc] initWithFrame:CGRectMake(actionSheetBtn.right + 30, _bigImage.bottom + 80, (kScreenWidth-90)/2, 50)];
+    [pickerViewBtn setTitle:@"PickerView" forState:UIControlStateNormal];
+    pickerViewBtn.layer.borderWidth = 1;
+    pickerViewBtn.layer.borderColor = [UIColor grayColor].CGColor;
+    [pickerViewBtn setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+    [pickerViewBtn addTarget:self action:@selector(showPickerView:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:pickerViewBtn];
     
     [MKLoadingView showInView:self.view];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -104,12 +131,6 @@
             
         }];
     });
-}
-
-- (void)showFloatView:(id)sender {
-    [MKEffectTipView showWithduration:1 inView:self.view finish:^{
-        
-    }];
 }
 
 #pragma mark - Getter -
@@ -142,6 +163,25 @@
     [zoomView showInView:self.view];
 }
 
+- (void)showFloatView:(id)sender {
+    [MKEffectTipView showWithduration:1 inView:self.view finish:^{
+        
+    }];
+}
+
+- (void)showSheetView:(UIButton *)btn {
+    MKActionSheetView* sheetView = [[MKActionSheetView alloc] initWithDelegate:self cancelTitle:@"取消" buttonTitles:@[@"拍照上传", @"从相册选择"]];
+    sheetView.sheetHeaderView = nil;
+    [sheetView show];
+}
+
+- (void)showPickerView:(UIButton *)btn {
+    MKConfigPickerView* pickerView = [[MKConfigPickerView alloc] initWithTitle:@"请选择数量" contents:@[@"1份", @"2份", @"3份"] values:@[@(1), @(2), @(3)] confirmBack:^(NSInteger row, NSString *content, NSNumber* value) {
+        
+    }];
+    [pickerView show];
+}
+
 #pragma mark - LCAdvertBannerViewDeleagte -
 - (void)advertBannerSelectedIndex:(NSInteger)index {
     
@@ -168,6 +208,15 @@
 
 - (void)setAdsenceInfo:(NSArray *)adsenceInfo {
     _advertBannerView.datas = adsenceInfo;
+}
+
+#pragma makr - MKActionSheetViewDelegate -
+- (void)sheetViewCancel:(MKActionSheetView *)sheetView {
+    
+}
+
+- (void)sheetView:(MKActionSheetView *)sheetView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
 }
 
 @end
