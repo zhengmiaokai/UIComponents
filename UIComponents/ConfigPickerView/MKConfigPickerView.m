@@ -6,9 +6,13 @@
 //
 
 #import "MKConfigPickerView.h"
-#import "MKConstant.h"
-#import <MKUtils/UIView+Addition.h>
+
 #import <MKUtils/MarcoConstant.h>
+#import <MKUtils/UIView+Addition.h>
+#import <MKUtils/UIColor+Addition.h>
+#import <MKUtils/NSArray+Additions.h>
+
+#import "MKConstant.h"
 
 @interface MKConfigPickerView () <UIPickerViewDelegate, UIPickerViewDataSource>
 
@@ -39,7 +43,7 @@
 }
 
 - (void)createSubViews {
-    self.backgroundColor = UIColorWithRGBA(0x000000, 0.6);
+    self.backgroundColor = [UIColor colorWithHexString:@"#000000" alpha:0.6];
     [self addTarget:self action:@selector(onCancelAction:)];
     
     UIView* contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, UIScalePixel(240))];
@@ -66,18 +70,18 @@
 }
 
 - (void)showAnimation {
-    self.backgroundColor = UIColorWithRGBA(0x000000, 0);
+    self.backgroundColor = [UIColor colorWithHexString:@"#000000" alpha:0];
     _contentView.top = self.height;
     
     [UIView animateWithDuration:0.25 animations:^{
-        self.backgroundColor = UIColorWithRGBA(0x000000, 0.6);
+        self.backgroundColor = [UIColor colorWithHexString:@"#000000" alpha:0.6];
         self.contentView.bottom = self.height;
     }];
 }
 
 - (void)removeFromSuperview {
     [UIView animateWithDuration:0.25 animations:^{
-        self.backgroundColor = UIColorWithRGBA(0x000000, 0);
+        self.backgroundColor = [UIColor colorWithHexString:@"#000000" alpha:0];
         self.contentView.top = self.height;
     } completion:^(BOOL finished) {
         [super removeFromSuperview];
@@ -91,7 +95,7 @@
 
 - (void)onConfirmAction:(UIButton *)btn {
     if (_confirmBack) {
-        _confirmBack(_seletedRow, [_contents objectAtIndex:_seletedRow], [_values objectAtIndex:_seletedRow]);
+        _confirmBack(_seletedRow, [_contents safeObjectAtIndex:_seletedRow], [_values safeObjectAtIndex:_seletedRow]);
     }
     
     [self removeFromSuperview];
@@ -100,12 +104,12 @@
 #pragma mark - Getter -
 - (UIView *)toolBar {
     UIView* toolBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, UIScalePixel(50))];
-    toolBar.backgroundColor = UIColorWithRGB(0xF7F7F7);
+    toolBar.backgroundColor = [UIColor colorWithHexString:@"#F7F7F7"];
     
     UILabel* titleLab = [[UILabel alloc] initWithFrame:CGRectZero];
     titleLab.text = _title;
     titleLab.font = UIScaleFont(16);
-    titleLab.textColor = UIColorWithRGB(0x333333);
+    titleLab.textColor = [UIColor colorWithHexString:@"#333333"];
     titleLab.textAlignment = NSTextAlignmentCenter;
     [titleLab sizeToFit];
     titleLab.center = CGPointMake(toolBar.width/2, toolBar.height/2);
@@ -114,14 +118,14 @@
     UIButton* cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, UIScalePixel(52), toolBar.height)];
     [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
     [cancelBtn addTarget:self action:@selector(onCancelAction:) forControlEvents:UIControlEventTouchUpInside];
-    [cancelBtn setTitleColor:UIColorWithRGB(0x9B9B9B) forState:UIControlStateNormal];
+    [cancelBtn setTitleColor:[UIColor colorWithHexString:@"#9B9B9B"] forState:UIControlStateNormal];
     cancelBtn.titleLabel.font = UIScaleFont(14);
     [toolBar addSubview:cancelBtn];
     
     UIButton* confirmBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.width - UIScalePixel(52), 0, UIScalePixel(52), toolBar.height)];
     [confirmBtn setTitle:@"确定" forState:UIControlStateNormal];
     [confirmBtn addTarget:self action:@selector(onConfirmAction:) forControlEvents:UIControlEventTouchUpInside];
-    [confirmBtn setTitleColor:UIColorWithRGB(0x333333) forState:UIControlStateNormal];
+    [confirmBtn setTitleColor:[UIColor colorWithHexString:@"#333333"] forState:UIControlStateNormal];
     confirmBtn.titleLabel.font =  UIScaleFont(14);
     [toolBar addSubview:confirmBtn];
     
@@ -134,7 +138,7 @@
         _pickerView.delegate = self;
         _pickerView.dataSource = self;
         _pickerView.showsSelectionIndicator = NO;
-        _pickerView.backgroundColor = UIColorWithRGB(0xFFFFFF);
+        _pickerView.backgroundColor = [UIColor colorWithHexString:@"#FFFFFF"];
     }
     return _pickerView;
 }
@@ -155,11 +159,11 @@
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
     UIView* cell = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.width, UIScalePixel(44))];
     
-    NSString* content = [_contents objectAtIndex:row];
+    NSString* content = [_contents safeObjectAtIndex:row];
     UILabel* contentLab = [[UILabel alloc] initWithFrame:cell.bounds];
     contentLab.text = content;
     contentLab.font = UIScaleFont(16);
-    contentLab.textColor = UIColorWithRGB(0x333333);
+    contentLab.textColor = [UIColor colorWithHexString:@"#333333"];
     contentLab.textAlignment = NSTextAlignmentCenter;
     [cell addSubview:contentLab];
     
