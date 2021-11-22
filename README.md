@@ -1,6 +1,6 @@
 # UIComponents
 
-## 公共UI组件：广告轮播、PageControl、导航栏、ProgressHUD、ZoomScrollView
+## 公共UI组件：广告轮播、PageControl、导航栏、ActionSheetView、PickerView、SpaceTextField、ProgressHUD、ZoomScrollView
 
 <img width="450" alt="WeChat92405571a56a31be11284b6e43cfe321" src="https://user-images.githubusercontent.com/13111933/115051863-dada5680-9f0f-11eb-8c61-d376d85c617c.png">
 
